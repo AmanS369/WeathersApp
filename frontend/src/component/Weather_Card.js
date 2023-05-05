@@ -16,7 +16,7 @@ function Weather_Card() {
   const FetchClick = async () => {
     
   try {
-    const response = await fetch(`http://127.0.0.1:8000/api/weather/${query}/`);
+    const response = await fetch(`http://3.15.175.163:8000/api/weather/${query}/`);
     const data = await response.json();
     if (data.cod === '404') {
       setErrorMessage(data.message);
