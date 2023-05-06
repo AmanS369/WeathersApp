@@ -11,12 +11,12 @@ function Weather_Card() {
   const [query, setQuery] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
-  const BASE_URL = 'http://3.15.175.163:8000/api/weather/';
+
 
   const FetchClick = async () => {
     
   try {
-    const response = await fetch(BASE_URL + '${query}/');
+    const response = await fetch(`http://3.15.175.163:8000/api/weather/${query}/`);
     const data = await response.json();
     if (data.cod === '404') {
       setErrorMessage(data.message);
